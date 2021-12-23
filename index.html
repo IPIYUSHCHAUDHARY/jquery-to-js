@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/images/favicon/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/assets/css/prism.css" data-noprefix />
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <title>JQuery-to-JS</title>
+</head>
+
+<body>
+
+    <header class="cust-head">
+        <div class="logo-wrap">
+            <a href="#" class="logo-link"><img class="logo-img" src="/assets/images/logo.png" alt="logo"></a>
+        </div>
+        <div class="menu-wrap">
+
+            <div class="search-wrap">
+                <span class="material-icons ">search</span>
+                <input class="search-inpt" id="searchInput" type="search" placeholder=" ">
+                <label class="search-lbl" for="searchInput" class="">Search</label>
+            </div>
+        </div>
+    </header>
+    <main class="bdy-cntnt cust-bg">
+        <section class="cust-bg">
+            <div class="cust-container">
+                <div class="cust-wrapper">
+                    <h2 class="cust__head">AJAX</h2>
+                    <div class="cust__subwrap">
+                        <h3 class="cust__subhead">ALTERNATIVES:</h3>
+                        <a href="#" target="_blank" class="cust__link">fetch https</a>
+                    </div>
+                </div>
+                <div class="code-sec">
+                    <h2 class="code__head">JSON</h2>
+
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$.getJSON('/my/url', function(data) { 
+                                
+});</code>
+                        </pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">var request = new XMLHttpRequest();
+request.open('GET', '/my/url', true);
+
+request.onload = function() {
+    if (this.status >= 200 && this.status < 400) {
+    // Success!
+    var data = JSON.parse(this.response);
+    }
+    else {
+    // We reached our target server, but it returned an error
+    }
+};
+
+request.onerror = function() {
+    // There was a connection error of some sort
+};
+
+request.send();</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-sec">
+                    <h2 class="code__head">Post</h2>
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$.ajax({
+    type: 'POST',
+    url: '/my/url',
+    data: data
+});</code>
+                        </pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">var request = new XMLHttpRequest();
+request.open('POST', '/my/url', true);
+request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+request.send(data);</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-sec">
+                    <h2 class="code__head">Request</h2>
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$.ajax({
+    type: 'GET',
+    url: '/my/url',
+    success: function(resp) {
+
+},
+error: function() {
+
+}
+});</code></pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">var request = new XMLHttpRequest();
+request.open('GET', '/my/url', true);
+
+request.onload = function() {
+    if (this.status >= 200 && this.status < 400) {
+    // Success!
+    var resp = this.response;
+    } else {
+    // We reached our target server, but it returned an error
+
+    }
+};
+
+request.onerror = function() {
+    // There was a connection error of some sort
+};
+
+request.send();</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cust-white-sec">
+            <div class="cust-container">
+                <div class="cust-wrapper">
+                    <h2 class="cust__head">EFFECTS</h2>
+                    <div class="cust__subwrap">
+                        <h3 class="cust__subhead">ALTERNATIVES:</h3>
+                        <a href="#" target="_blank" class="cust__link">animate.css</a>
+                        <a href="#" target="_blank" class="cust__link">movie.js</a>
+                        <a href="#" target="_blank" class="cust__link">velocity.js</a>
+
+                    </div>
+                </div>
+                <div class="code-sec">
+                    <h2 class="code__head">Fade In</h2>
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$(el).fadeIn();</code> </pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">el.classList.add('show'); el.classList.remove('hide');</code></pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">.show {transition: opacity 400ms;}.hide {opacity: 0;}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-sec">
+                    <h2 class="code__head">Fade Out</h2>
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$(el).fadeOut();</code>
+                        </pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">el.classList.add('hide');<br> el.classList.remove('show');</code></pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">.show {opacity: 1;}.hide {opacity: 0; transition: opacity 400ms;}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-sec">
+                    <h2 class="code__head">Request</h2>
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$(el).fadeOut();</code></pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">el.classList.add('hide'); <br> el.classList.remove('show');</code></pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">.show {opacity: 1;}.hide {opacity: 0;transition: opacity 400ms;}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-sec">
+                    <h2 class="code__head">Show</h2>
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$(el).show();</code></pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">el.style.display = '';</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cust-bg">
+            <div class="cust-container">
+                <div class="cust-wrapper">
+                    <h2 class="cust__head">ELEMENTS</h2>
+                    <div class="cust__subwrap">
+                        <h3 class="cust__subhead">ALTERNATIVES:</h3>
+                        <a href="#" target="_blank" class="cust__link">Bozo</a>
+                        <a href="#" target="_blank" class="cust__link">Dom</a>
+                    </div>
+                </div>
+                <div class="code-sec">
+                    <h2 class="code__head">Add Class</h2>
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$(el).addClass(className);</code></pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">el.classList.add(className);</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-sec">
+                    <h2 class="code__head">After</h2>
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$(target).after(element);</code></pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">target.insertAdjacentElement('afterend', element);</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-sec">
+                    <h2 class="code__head">Append</h2>
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$(parent).append(el);</code></pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">parent.appendChild(el);</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-sec">
+                    <h2 class="code__head">Before</h2>
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$(target).before(element);</code></pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">target.insertAdjacentElement('beforebegin', element);</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-sec">
+                    <h2 class="code__head">Children</h2>
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$(el).children();</code></pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">el.children</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-sec">
+                    <h2 class="code__head">Append</h2>
+                    <div class="main-editor">
+                        <div class="code__heading">
+                            <h3 class="main__head">JQUERY</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="code__heading">
+                            <h3 class="main__head">JS</h3>
+                            <span class="material-icons copy__btn">content_copy</span>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">$(parent).append(el);</code></pre>
+                        </div>
+                        <div class="sub__editor">
+                            <pre><code class="language-js">parent.appendChild(el);</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="cust-foot">
+        <p class="foot__txt">Made at <a href="#" class="foot__link">Sandvok Softwares</a> with <span class="material-icons ">favorite</span></p>
+        <div class="footr-logo-wrap">
+            <a href="#" class="logo-link"><img class="logo-img" src="/assets/images/favicon/favicon-32x32.png" alt="logo"></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/prism.js"></script>
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>
