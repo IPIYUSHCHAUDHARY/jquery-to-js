@@ -1,0 +1,228 @@
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+     :root {
+        --cust-bg-light: #f8f9fa;
+        --cust-bg-dark: #212529;
+        --cust-txt-light: #f8f9fa;
+        --cust-txt-dark: #212529;
+        --cust-font: 'Raleway', sans-serif;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    
+    @media (prefers-reduced-motion: no-preference) {
+         :root {
+            scroll-behavior: smooth;
+        }
+    }
+    
+    body {
+        font-family: var(--cust-font);
+        font-weight: 400;
+        line-height: 1.5;
+        color: var(--cust-txt-dark);
+        background-color: var(--cust-bg-light);
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    
+    a {
+        color: var(--cust-txt-dark);
+    }
+    
+    .cust-container {
+        width: 100%;
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    @media screen and (min-width:576px) {
+        .cust-container {
+            max-width: 540px;
+        }
+    }
+    
+    @media screen and (min-width:768px) {
+        .cust-container {
+            max-width: 720px;
+        }
+    }
+    
+    @media screen and (min-width:992px) {
+        .cust-container {
+            max-width: 960px;
+        }
+    }
+    
+    @media screen and (min-width:1200px) {
+        .cust-container {
+            max-width: 1140px;
+        }
+    }
+    
+    .cust-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 40px;
+    }
+    
+    .search-wrap {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #cccccc;
+        position: relative;
+    }
+    
+    .search-inpt {
+        background: transparent;
+        padding: 8px;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+    }
+    
+    .search-lbl {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding-left: 32px;
+    }
+    
+    .search-inpt:placeholder-shown+.search-lbl {
+        transform: translateY(0);
+        transition: transform 0.5s;
+    }
+    
+    .search-inpt:not(:placeholder-shown)+.search-lbl,
+    .search-inpt:focus+.search-lbl {
+        font-size: 10px;
+        font-weight: 600;
+        transform: translateY(-18px);
+        transition: transform 0.5s;
+    }
+    
+    .cust-bg {
+        background-color: #eee;
+    }
+    
+    .cust-wrapper {
+        padding: 5rem 0 0;
+    }
+    
+    .cust__head {
+        font-size: 3rem;
+        font-weight: 300;
+        text-align: center;
+        color: #888;
+        letter-spacing: 3px;
+    }
+    
+    .cust__subwrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 12px;
+    }
+    
+    .cust__subhead {
+        font-size: 1.5rem;
+        font-weight: 200;
+    }
+    
+    .cust__link {
+        font-size: 1.25rem;
+        padding-left: 10px;
+    }
+    
+    .code-sec {
+        padding-top: 3.5rem;
+    }
+    
+    .code__head {
+        font-size: 2rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    
+    .main__head {
+        font-size: 1.5rem;
+        font-weight: 200;
+        padding-left: 10px;
+    }
+    
+    .main-editor {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px 20px;
+        padding-bottom: 4rem;
+    }
+    
+    .code__heading {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        font-size: 1.5rem;
+        font-weight: 200;
+    }
+    
+    .copy__btn {
+        color: #0d6efd;
+        cursor: pointer;
+    }
+    
+    .sub__editor {
+        background-color: #fff;
+        overflow-x: auto;
+    }
+    
+    .sub__editor:last-of-type {
+        grid-column: 2;
+    }
+    
+    .sub__editor>.language-js {
+        padding: 20px;
+        margin: 0;
+        background-color: #fff;
+    }
+    
+    .cust-white-sec .language-js {
+        margin: 0;
+        background-color: #f3f3f3;
+    }
+    
+    .cust-white-sec {
+        background-color: #fff;
+    }
+    
+    .cust-foot {
+        background-color: #fff;
+        padding: 32px;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .foot__txt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .foot__link,
+    .foot__txt .material-icons {
+        padding-inline: 8px;
+    }
+    
+    .footr-logo-wrap {
+        padding-block: 4px;
+    }
